@@ -31,7 +31,7 @@ class ReglaValidacionGanimedes(ReglaValidacion):
         return any(char in especiales for char in clave)
 
     def es_valida(self, clave: str) -> bool:
-        if not self._vaidar_longitud(clave):
+        if not self._validar_longitud(clave):
             raise ValueError("ReglaValidacionGanimedes: La clave debe tener una longitud de mas de 8 caracteres.")
         if not self._contiene_mayuscula(clave):
             raise ValueError("ReglaValidacionGanimedes: La clave debe contener al menos una letra mayúscula.")
@@ -67,5 +67,11 @@ class Validador:
 
     def es_valida(self, clave: str) -> bool:
         return self.regla.es_valida(clave)
+
+    def validar_calve(clave: str, reglas: list):
+        for regla in reglas:
+            validador = Validador(clave)
+            pass
+
 
 
